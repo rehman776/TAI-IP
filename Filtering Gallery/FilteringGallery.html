@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filtering Gallery</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Lato:wght@700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+    body {
+      font-family: "Poppins", sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .gallery li {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery li:hover {
+        transform: scale(1.05);
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .filter {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      
+      .filter button {
+        cursor: pointer;
+        padding: 10px 20px;
+        margin: 5px 3px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+    .filter button a{
+      color: white;
+      text-decoration: none;
+    }
+
+    .filter button:hover {
+        background-color: #2c3e50;
+        border-bottom: 3px solid white;
+        transition: 0.8s;
+    }
+    .card_body{
+      padding: 5px 20px;
+      color: white
+    }
+
+
+
+
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #2c3e50;
+}
+nav{
+	position: relative;
+	margin: 270px auto 0;
+	width: 590px;
+	height: 50px;
+	background: #34495e;
+	border-radius: 8px;
+	font-size: 0;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="filter">
+        <button class="filter-button" data-filter="all"> <a href="#">All</a></button>
+        <button class="filter-button" data-filter="shoes"> <a href="#">Shoes</a></button>
+        <button class="filter-button" data-filter="mobiles"> <a href="#">Mobiles</a></button>
+        <button class="filter-button" data-filter="car"> <a href="#">Car</a></button>
+        <button class="filter-button" data-filter="jeep"> <a href="#">Jeep</a></button>
+        <button class="filter-button" data-filter="tractor"> <a href="#">Tractor</a></button>
+        <button class="filter-button" data-filter="nature"> <a href="#">Nature</a></button>
+        <div class="animation start-all"></div>
+    </div>
+
+    <ul class="gallery">
+      <li class="car"><img src="./Photos/car1.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car2.webp" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car3.webp" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car4.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car5.webp" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car6.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car7.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car8.webp" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car9.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car10.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car11.webp" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car12.webp" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car13.webp" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car14.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car15.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car16.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car17.jpg" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+      <li class="car"><img src="./Photos/car18.webp" alt="Car Image"><div class="card_body">
+        <h2 class="card_title">Car</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+
+        <!-- Add more images with appropriate classes -->
+
+        <li class="mobiles"><img src="./Photos/phone1.jpg" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone2.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone3.jpg" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone4.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone5.jpg" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone6.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone7.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone8.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone9.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone10.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone11.jpg" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone12.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone13.jpg" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone14.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone15.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone16.jpg" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone17.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+        <li class="mobiles"><img src="./Photos/phone18.webp" alt="Mobiles Image"><div class="card_body">
+        <h2 class="card_title">Mobiles</h2>
+        <p class="card_text">Lorem, ipsum dollar...</p>
+    </div></li>
+
+        <!-- Add more images with appropriate classes -->
+
+        <li class="shoes"><img src="./Photos/shoes1.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes2.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes3.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes4.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes5.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes6.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes7.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes8.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes9.jpg" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes10.jpg" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes11.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes12.jpg" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes13.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes14.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes15.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes16.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes17.jpg" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="shoes"><img src="./Photos/shoes18.webp" alt="Shoes Image"><div class="card_body">
+          <h2 class="card_title">Shoes</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+
+        <!-- Add more images with appropriate classes -->
+
+        <li class="jeep"><img src="./Photos/jeep1.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep2.jpeg" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep3.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep4.jpg" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep5.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep6.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep7.jpg" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep8.jpg" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep9.jpeg" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep10.jpg" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep11.jpg" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep12.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep13.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep14.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep15.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep16.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep17.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="jeep"><img src="./Photos/jeep18.webp" alt="Jeep Image"><div class="card_body">
+          <h2 class="card_title">Jeep</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+
+        <!-- Add more images with appropriate classes -->
+
+        <li class="tractor"><img src="./Photos/tractor1.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor2.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor3.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor4.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor5.jpeg" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor6.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor7.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor8.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor9.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor10.jpg" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor11.jpg" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor12.jpg" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor13.jpg" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor14.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor15.jpg" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor16.jpg" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor17.webp" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="tractor"><img src="./Photos/tractor18.jpg" alt="Tractor Image"><div class="card_body">
+          <h2 class="card_title">Tractor</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+
+        <!-- Add more images with appropriate classes -->
+
+        <li class="nature"><img src="./Photos/nature1.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature2.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature3.webp" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature4.jpeg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature5.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature6.webp" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature7.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature8.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature9.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature10.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature11.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature12.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature13.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature14.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature15.jpg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature16.webp" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature17.jpeg" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+        <li class="nature"><img src="./Photos/nature18.webp" alt="Nature Image"><div class="card_body">
+          <h2 class="card_title">Nature</h2>
+          <p class="card_text">Lorem, ipsum dollar...</p>
+      </div></li>
+
+        <!-- Add more images with appropriate classes -->
+    </ul>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const galleryItems = document.querySelectorAll('.gallery li');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filterValue = button.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    item.style.display = 'none';
+
+                    if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                        item.style.display = 'block';
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
