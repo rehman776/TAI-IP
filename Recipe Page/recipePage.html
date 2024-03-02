@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Page</title>
+</head>
+<style>
+   /* Reset CSS */
+   * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html{
+        scroll-behavior: smooth;
+      }
+
+      /* Body Styling */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Navigation Bar Styling */
+      
+      #navbar {
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+        }
+
+      #logo {
+        display: block;
+    }
+
+    #logo img {
+            height: 60px;
+            float: left;
+            margin-right: 30px;
+    }
+
+      #logo img:hover {
+        transform: scale(1.1);
+      }
+
+      #navbar ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        margin-right: 20px;
+      }
+
+      #navbar ul li a {
+        float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+      #navbar ul li a:hover {
+        background-color: #21303f;
+        transition: 0.8s;
+      }
+
+      #navbar input {
+        margin-left: auto;
+        padding: 5px;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        margin-right: 10px;
+      }
+
+      #navbar i {
+        font-size: 24px;
+        cursor: pointer;
+        display: none;
+        color: white;
+      }
+
+
+      /* Home Section */
+      #home {
+        display: flex;
+        flex-direction: column;
+        height: 900px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: black;
+      }
+
+      #home::before {
+        content: "";
+        background: url('recip1.jpg') no-repeat center center/cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 94%;
+        width: 100%;
+        z-index: -1;
+        background-color: #000; /* Black */
+  opacity: 0.79; /* Adjusted opacity for a subtle overlay */
+  /* ... existing styles ... */
+      }
+
+      #home p {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      #home button {
+        font-size: 1.5rem;
+        color: white;
+        padding: 10px 30px;
+        border: none;
+        background-color: #21303f;
+        font-weight: bold;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #home h1 {
+        font-size: 3.5rem; /* Larger font size for the hero text */
+        margin-bottom: 20px;
+
+      #home {
+        text-align: center;
+        padding: 120px 20px; /* Improved padding for better visual appeal */
+        color: #fff; /* White text for contrast */
+    }
+
+    }
+
+    #home button {
+        background-color: #21303f; /* Use a vibrant color for the button */
+        font-size: 1.8rem;
+        padding: 12px 40px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+</style>
+<body>
+    <nav id="navbar">
+      <div id="logo">
+        <img src="website logo1.png" alt="MyOnlineMeal.com" />
+      </div>
+      <ul>
+        <li><a href="#navbar">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#clients">Our Clients</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="navbar-icon">
+      <i class="fa-solid fa-bars"></i></div>
+      <div class="shopingbag">
+    </nav>
+    <section id="home">
+      <h1 class="h-primary">Welcome to My Online Meal</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam labore
+        minus eum voluptatem iure in amet error quis, ut reprehenderit
+        consequatur cumque aperiam beatae asperiores magnam quod deserunt
+        exercitationem quae molestias voluptas saepe laborum.iure in amet error quis, ut reprehenderit
+      </p>
+      <button class="btn">Order Now</button>
+    </section>
