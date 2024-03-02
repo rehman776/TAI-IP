@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(#4E65FF, #92EFFD);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #todo-container {
+      width: 400px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-transform: uppercase;
+      padding-bottom: 20px;
+    }
+    h1 img{
+        position: relative;
+        width: 35px;
+        top: 6px;
+    }
+    input[type="text"] {
+      width: calc(100% - 72px);
+      padding: 12px;
+      border: 1px solid #ced4da;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+      display: block;
+      margin: auto;
+    }
+    input[type="text"]:focus {
+      outline: none;
+      border-color: dodgerblue;
+    }
+    button {
+      padding: 12px 24px;
+      background-color: dodgerblue;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+      position: relative;
+      left: 301px;
+      bottom: 43px;
+    }
+    button:hover {
+      background-color: #007bff;
+    }
+    .todo-item {
+      padding: 12px;
+      border-bottom: 1px solid #ced4da;
+      display: flex;
+      align-items: center;
+      color: #333;
+      font-size: 16px;
+    }
+    .todo-item:last-child {
+      border-bottom: none;
+    }
+    .delete-btn {
+      margin-left: auto;
+      cursor: pointer;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+    .delete-btn:hover {
+      color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+  <div id="todo-container">
+    <h1>To-Do List <img src="icon.png"></h1>
+    <input type="text" id="todo-input" placeholder="Enter your task">
+    <button onclick="addTodo()">Add</button>
+    <div id="todo-list"></div>
+  </div>
+
+  <script>
+    // Function to add a new to-do item
+    function addTodo() {
+      var input = document.getElementById("todo-input");
+      var todoText = input.value.trim();
+
+      if (todoText === "") return;
+
+      var todoItem = document.createElement("div");
+      todoItem.classList.add("todo-item");
+      todoItem.innerHTML = todoText + '<span class="delete-btn" onclick="deleteTodo(this)">❌</span>';
+      
+      document.getElementById("todo-list").appendChild(todoItem);
+
+      // Save to local storage
+      saveTodosToLocalStorage();
+
+      input.value = "";
+    }
+
+    // Function to delete a to-do item
+    function deleteTodo(element) {
+      element.parentNode.remove();
+
+      // Save to local storage
+      saveTodosToLocalStorage();
+    }
+
+    // Function to save to-do items to local storage
+    function saveTodosToLocalStorage() {
+      var todoItems = document.querySelectorAll(".todo-item");
+      var todos = [];
+
+      todoItems.forEach(function(item) {
+        todos.push(item.textContent.trim());
+      });
+
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+
+    // Function to load to-do items from local storage
+    function loadTodosFromLocalStorage() {
+      var todos = JSON.parse(localStorage.getItem("todos"));
+
+      if (todos) {
+        todos.forEach(function(todoText) {
+          var todoItem = document.createElement("div");
+          todoItem.classList.add("todo-item");
+          todoItem.innerHTML = todoText + '<span class="delete-btn" onclick="deleteTodo(this)">❌</span>';
+          document.getElementById("todo-list").appendChild(todoItem);
+        });
+      }
+    }
+
+    // Load to-do items when the page loads
+    window.onload = function() {
+      loadTodosFromLocalStorage();
+    };
+  </script>
+</body>
+</html>
